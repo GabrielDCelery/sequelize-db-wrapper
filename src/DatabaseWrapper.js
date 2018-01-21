@@ -5,6 +5,7 @@ const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const ModelDefiner = require('./ModelDefiner');
 const ModelAssociator = require('./ModelAssociator');
+const BaseController = require('./BaseController');
 
 const OPERATORS_ALIASES = {
     $eq: Op.eq,
@@ -70,6 +71,7 @@ class DatabaseWrapper {
         this.modelDefiner = new ModelDefiner(this.sequelize);
         this.modelAssociator = new ModelAssociator();
         this.models = {};
+        this.baseControllers = {};
     }
 
     registerModel (_modelNamePath, _modelDefConfig) {
@@ -80,6 +82,7 @@ class DatabaseWrapper {
         const _model = this.modelDefiner.createModel(_.last(_.split(_modelNamePath, '.')), _modelDefConfig);
 
         _.set(this.models, _modelNamePath, _model);
+        _.set(this.baseControllers, _modelNamePath, new BaseController(_model));
     }
 
     getModel (_modelNamePath) {
