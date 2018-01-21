@@ -1,0 +1,13 @@
+{
+      "globals": {
+          "describe": true,
+          "it": true,
+          "chai": true,
+          "expect": true,
+          "sinon": true
+      },
+      "env": {
+          "node": true,
+          "mocha": true
+          }
+}

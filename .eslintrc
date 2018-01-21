@@ -1,0 +1,11 @@
+{
+    "extends": "standard",
+    "rules": {
+        "semi": ["error", "always"],
+        "import/first": "off",
+        "import/no-webpack-loader-syntax": "off",
+        "indent": ["error", 4, {
+            "SwitchCase": 1
+        }],
+    }
+}
