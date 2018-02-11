@@ -69,5 +69,5 @@ To get a registered model.
 ```javascript
 const db = dbWrapper.getDB('test');
 
-db.getModel('user');
+const model = db.getModel('user');
 ```
