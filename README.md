@@ -64,7 +64,7 @@ db.registerModel('user', {
 });
 ```
 
-To get a registered models
+To get a registered model.
 
 ```javascript
 const db = dbWrapper.getDB('test');
