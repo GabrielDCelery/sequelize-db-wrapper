@@ -36,7 +36,6 @@ it('creates a default instance', () => {
     expect(instance.synchronized).to.eql(false);
     expect(instance.modelDefiner).to.be.an.instanceof(ModelDefiner);
     expect(instance.models).to.eql({});
-    expect(instance.baseControllers).to.eql({});
     expect(instance.config).to.eql(DB_OPTIONS);
     expect(instance.sequelize).to.be.an.instanceof(Sequelize);
 });
